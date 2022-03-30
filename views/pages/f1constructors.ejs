@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+
+    <%- include("../partials/navbar")%>
+        <div class="center">
+            <h1>F1 2022 Constructors</h1>
+            <table class="pure-table pure-table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Nationality</th>
+                        <th>Wikipedia page</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <% for(var i=0; i < constructors.MRData.ConstructorTable.Constructors.length ; i++ ){ %>
+
+                        <tr>
+                            <td>
+                                <%=constructors.MRData.ConstructorTable.Constructors[i].name%>
+                            </td>
+                            <td>
+                                <%=constructors.MRData.ConstructorTable.Constructors[i].nationality %>
+                            </td>
+
+                            <td style="text-align: center;">
+                                <a href="<%=constructors.MRData.ConstructorTable.Constructors[i].url %>">Link</a>
+                            </td>
+
+                        </tr>
+
+                        <% }; %>
+                </tbody>
+            </table>
+        </div>
+        <%- include("../partials/footer")%>
